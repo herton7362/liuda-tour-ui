@@ -1,0 +1,33 @@
+.kratos{
+  &-fold{
+    .expand-handler{
+      display: none;
+    }
+  }
+
+  &-fold&-expandable{
+    padding-right: 60px;
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+    max-height: 34px;
+
+    .expand-handler{
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .ivu-icon-chevron-down{
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  &-fold&-expanded{
+    max-height: 200px;
+    .ivu-icon-chevron-down{
+      transform: rotate(180deg);
+    }
+  }
+}

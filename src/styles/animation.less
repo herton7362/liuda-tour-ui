@@ -1,0 +1,138 @@
+// Name:                     Animation
+//
+// Description:              Useful vue animations for <transition>
+//
+// Example                   <transition name="scale-up">
+//
+// Modifiers:                `fade`
+//                           `scale-up`
+//                           `scale-down`
+//                           `slide-top`
+//                           `slide-bottom`
+//                           `slide-left`
+//                           `slide-right`
+//                           `slide-shake`
+//
+// =============================================================================
+
+.fade{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s linear;
+  }
+  &-enter, &-leave-to {
+    opacity: 0;
+  }
+}
+
+.scale-up{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: scale(1);
+  }
+  &-enter, &-leave-to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.scale-down{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: scale(1);
+  }
+  &-enter, &-leave-to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.slide-top{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: translateY(0);
+  }
+  &-enter, &-leave-to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-bottom{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: translateY(0);
+  }
+  &-enter, &-leave-to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.slide-left{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: translateX(0);
+  }
+  &-enter, &-leave-to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.slide-right{
+  &-enter-active, &-leave-active {
+    transition: opacity .3s ease, transform .3s ease;
+    transform: translateX(0);
+  }
+  &-enter, &-leave-to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.slide-shake{
+  &-enter-active, &-leave-active {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-name: shake;
+  }
+  &-enter, &-leave-to {
+    animation-name: shake;
+    opacity: 0;
+  }
+}
+
+/* Shake */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-9px);
+  }
+  20% {
+    transform: translateX(8px);
+  }
+  30% {
+    transform: translateX(-7px);
+  }
+  40% {
+    transform: translateX(6px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+  70% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  90% {
+    transform: translateX(-1px);
+  }
+}
